@@ -1,0 +1,48 @@
+<div class="card mb-2 mt-2">
+    <div class="card-header">
+        Input
+    </div>
+    <div class="card-body">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Ingrese Euros:</label>
+                <input type="number" class="form-control" [(ngModel)]="quote.entrada" name="entrada"
+                    placeholder="Ingrese Euros" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Seleccione Moneda:</label>
+                <select class="form-control" name="typeQuote" [(ngModel)]="quote.typeQuote">
+                    <option *ngFor="let item of arrTypeQuotes" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label>&nbsp;</label>
+                <button class="btn btn-outline-secondary btn-block" (click)="calculate()">Cotizar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        Output
+    </div>
+    <div class="card-body">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Tipo de Cambio:</label>
+                <input type="number" class="form-control" [(ngModel)]="quote.tipoCambio" name="tipoCambio"
+                    placeholder="" disabled>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Salida:</label>
+                <input type="number" class="form-control" [(ngModel)]="quote.salida" name="salida" placeholder="Salida">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <form [formGroup]="myForm">
+    <input formControlName="amount" placeholder="Amount">
+</form> -->
+
+<!-- <p>{{ 123456789.4546 | number }}</p> -->
